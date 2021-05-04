@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 /// Audio encoding of the output audio format in Text-To-Speech. Refer to the [Dialogflow V2 REST API documentation](https://cloud.google.com/dialogflow/es/docs/reference/rest/v2/projects.agent.environments#Environment.OutputAudioEncoding) for more details.
 class OutputAudioEncoding {
   /// Not specified.
@@ -17,4 +19,29 @@ class OutputAudioEncoding {
 
   /// Opus encoded audio frames in Ogg container (OggOpus). sampleRateHertz must be 16000.
   static const String oggOpus = 'OUTPUT_AUDIO_ENCODING_OGG_OPUS';
+
+  /// Encoding type
+  final String encoding;
+
+  /// Constructor
+  OutputAudioEncoding({@required this.encoding});
+
+  /// Static definition of various output audio encoding types
+  static final OutputAudioEncoding outputAudioEncodingUnspecified =
+      OutputAudioEncoding(encoding: OutputAudioEncoding.unspecified);
+  static final OutputAudioEncoding outputAudioEncodingLinear16 =
+      OutputAudioEncoding(encoding: OutputAudioEncoding.linear16);
+  static final OutputAudioEncoding outputAudioEncodingMp3 =
+      OutputAudioEncoding(encoding: OutputAudioEncoding.mp3_32kbps);
+  static final OutputAudioEncoding outputAudioEncodingMp364kbps =
+      OutputAudioEncoding(encoding: OutputAudioEncoding.mp3_64kbps);
+  static final OutputAudioEncoding outputAudioEncodingMulaw =
+      OutputAudioEncoding(encoding: OutputAudioEncoding.mulaw);
+  static final OutputAudioEncoding outputAudioEncodingOggOpus =
+      OutputAudioEncoding(encoding: OutputAudioEncoding.oggOpus);
+
+  @override
+  String toString() {
+    return encoding;
+  }
 }

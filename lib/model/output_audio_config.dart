@@ -1,4 +1,3 @@
-import 'package:dialogflow_v2/model/output_audio_encoding.dart';
 import 'package:dialogflow_v2/model/synthesize_speech_config.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -6,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 /// Dialogflow V2 REST API documentation.
 class OutputAudioConfig {
   /// Required. Audio encoding of the synthesized audio content.
-  final OutputAudioEncoding audioEncoding;
+  final String audioEncoding;
 
   /// The synthesis sample rate (in hertz) for this audio
   final int sampleRateHertz;
