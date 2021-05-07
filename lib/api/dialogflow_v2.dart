@@ -27,7 +27,7 @@ class Dialogflow {
       },
       body: json.encode(params.toJson()),
     );
-    printWrapped(response.body);
+    // printWrapped(response.body);
     return DetectIntentResponse.fromJson(json.decode(response.body));
   }
 
